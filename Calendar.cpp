@@ -17,9 +17,6 @@ const int ZellerRule(const int d, int m, int y)
 
 	y = std::abs(y);
 	const int lastTwoDigitsYear = y % 100;
-
-
-
 	const int firstTwoDigitsYear = y / 100;
 
 	// Zeller's Congruence formula
