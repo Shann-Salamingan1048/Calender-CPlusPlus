@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
-#include <cmath>
 #include <sstream>
 
 constexpr uint16_t spaces = 4;
@@ -19,13 +18,9 @@ const int ZellerRule(const int d, int m, int y)
 	y = std::abs(y);
 	const int lastTwoDigitsYear = y % 100;
 
-	// Calculate the number of digits in the number
-	const int numDigits = static_cast<int>(std::log10(y)) + 1;
 
-	// Calculate the power to raise 10 to in order to get the first two digits
-	const int divisor = static_cast<int>(std::pow(10, numDigits - 2));
 
-	const int firstTwoDigitsYear = y / divisor;
+	const int firstTwoDigitsYear = y / 100;
 
 	// Zeller's Congruence formula
 	int h = (d + (13 * (m + 1)) / 5 + lastTwoDigitsYear + lastTwoDigitsYear / 4 + firstTwoDigitsYear / 4 - 2 * firstTwoDigitsYear) % 7;
