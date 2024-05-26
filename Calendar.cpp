@@ -14,8 +14,6 @@ const int ZellerRule(const int d, int m, int y)
 		m += 12;
 		y -= 1;
 	}
-
-	y = std::abs(y);
 	const int lastTwoDigitsYear = y % 100;
 	const int firstTwoDigitsYear = y / 100;
 
